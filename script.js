@@ -66,4 +66,4 @@ const ahora = new Date();
 const opciones = { weekday: 'long', day: 'numeric', month: 'long' };
 document.querySelector(".date").innerHTML = ahora.toLocaleDateString('es-ES', opciones);
 
-checkWeather("Madrid");
+checkWeather("Murcia");
