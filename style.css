@@ -134,17 +134,12 @@ body.nublado {
     to { opacity: 1; transform: translateY(0); }
 }
 
-lottie-player {
-    display: block;
-    width: 150px;
-    height: 150px;
-    margin: 0 auto;
-    /* Esto asegura que si la animación carga, se vea */
-}
 
-#lottie-icon {
-    display: block;
-    width: 180px;  /* Un poco más grande para que luzca */
-    height: 180px;
-    margin: 0 auto;
+.main-footer {
+    position: fixed;
+    color: white !important;
+    width: 100%;
+    z-index: 10;
+    bottom: 0;
+    text-align: center;
 }
