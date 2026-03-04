@@ -1,0 +1,150 @@
+/* 1. Reset básico y fuentes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.8s ease; /* Transición suave cuando cambie el clima */
+}
+
+/* 2. Fondos dinámicos según el clima */
+body.despejado { 
+    background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%); 
+}
+body.lluvioso { 
+    background: linear-gradient(135deg, #203a43 0%, #2c5364 100%); 
+}
+body.nublado { 
+    background: linear-gradient(135deg, #bdc3c7 0%, #2c3e50 100%); 
+}
+
+/* 3. La Tarjeta de Cristal (Glassmorphism) */
+.card {
+    width: 90%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.2); /* Transparencia blanca */
+    backdrop-filter: blur(15px); /* El "mágico" desenfoque del cristal */
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    padding: 30px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* 4. Buscador */
+.search {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.search input {
+    border: 0;
+    outline: 0;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 10px 20px;
+    height: 50px;
+    border-radius: 30px;
+    flex: 1;
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.search input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.search button {
+    border: 0;
+    outline: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background 0.3s;
+}
+
+.search button:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* 5. Icono y Temperatura */
+.weather-icon {
+    width: 120px;
+    margin-top: 10px;
+}
+
+.temp {
+    font-size: 65px;
+    font-weight: 500;
+}
+
+.city {
+    font-size: 35px;
+    font-weight: 400;
+    margin-top: -10px;
+}
+
+/* 6. Detalles (Humedad y Viento) */
+.details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-top: 40px;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.details p {
+    font-size: 20px;
+}
+
+.details p:last-child {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.card {
+    /* ... lo que ya tenías ... */
+    animation: aparecer 1s ease-out;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+lottie-player {
+    display: block;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    /* Esto asegura que si la animación carga, se vea */
+}
+
+#lottie-icon {
+    display: block;
+    width: 180px;  /* Un poco más grande para que luzca */
+    height: 180px;
+    margin: 0 auto;
+}
